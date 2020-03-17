@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 7.1.0 on 2020-03-11 07:51:22.
+ * Generated for Laravel 7.1.3 on 2020-03-16 20:07:23.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -2652,6 +2652,18 @@ namespace Illuminate\Support\Facades {
                         /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
                         return $instance->compileEndComponentClass();
         }
+        
+        /**
+         * Sanitize the given component attribute value.
+         *
+         * @param mixed $value
+         * @return mixed 
+         * @static 
+         */ 
+        public static function sanitizeComponentAttribute($value)
+        {
+                        return \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($value);
+        }
          
     }
 
@@ -2848,7 +2860,6 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $command
          * @return mixed 
-         * @throws \RuntimeException
          * @static 
          */ 
         public static function dispatchToQueue($command)
