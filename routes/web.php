@@ -28,7 +28,7 @@ Route::group(['namespace' => 'Blog', 'prefix' => 'blog'], function (){
 //> Админка блога
 $groupData = [
     'namespace' => 'Blog\Admin',
-    'prefix'    => 'admin\blog',
+    'prefix'    => 'admin/blog',
 ];
 Route::group($groupData, function () {
     //BlogCategory
