@@ -67,11 +67,13 @@ class CategoryController extends BaseController
        $item = BlogCategory::find($id);
        if (empty($item)) {
            return back()
-               ->withErrors(['msg' => "Запись id=[{$id}]"])
+               ->withErrors(['msg' => "Запись id=[{$id}] не найдена"])
                ->withInput();
        }
        $data = $request->all();
-       $result = $item->fill($data)->save();
+       $result = $item
+           ->fill($data)
+           ->save();
 
        if ($result) {
            return redirect()
